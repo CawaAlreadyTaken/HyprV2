@@ -6,9 +6,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
-    "modules-left": ["custom/launch_wofi","wlr/workspaces","cpu","memory","disk","hyprland/window"],
+    "modules-left": ["custom/launch_wofi","hyprland/workspaces","cpu","memory","disk","hyprland/window"],
     "modules-center": ["custom/lock_screen","custom/updates","clock","custom/power_btn"],
-    "modules-right": ["temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/light_dark"],
+    "modules-right": ["temperature","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/light_dark"],
     
     "hyprland/window": {
         "format": "{}"
@@ -89,6 +89,8 @@
         }
     },
     
+
+    /*
     "custom/power_profile": {
         //shows the current power profile and switches to next on click
         "exec": "asusctl profile -p | sed s:'Active profile is'::",
@@ -106,6 +108,7 @@
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json"
     },
+    */
 
     "tray": {
         "icon-size": 18,
@@ -114,8 +117,8 @@
 
     "clock": {
         "format": "{:%I:%M %p}",
-        "tooltip": true,
-        "tooltip-format": "{: %A, %B %e %Y}"
+        "tooltip": false,
+        //"tooltip-format": "{: %A, %B %e %Y}"
     },
 
     "backlight": {
@@ -172,7 +175,7 @@
     
     "temperature": {
         "thermal-zone": 1,
-        "format": " {temperatureF}°F",
+        "format": " {temperatureC}°C",
         "critical-threshold": 70,
         "format-critical": " {temperatureC}°C",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"

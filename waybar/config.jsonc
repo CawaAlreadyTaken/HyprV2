@@ -12,7 +12,7 @@
     
     "hyprland/window": {
         "format": "{initialTitle}",
-        "icon": true
+	"icon": true
     },
 
     "custom/launch_wofi": {
@@ -22,7 +22,7 @@
     },
 
     "custom/lock_screen": {
-        "format": "",
+        "format": " ",
         "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
         "tooltip": false
     },
@@ -34,7 +34,7 @@
     },
 
     "custom/power_btn": {
-        "format": "",
+        "format": " ",
         "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
         "tooltip": false
     },
@@ -117,8 +117,8 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
-        "tooltip": false,
+        "format": "{:%H:%M}",
+        "tooltip": false
         //"tooltip-format": "{: %A, %B %e %Y}"
     },
 

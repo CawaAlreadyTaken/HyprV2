@@ -11,7 +11,8 @@
     "modules-right": ["temperature","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/light_dark"],
     
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+        "icon": true
     },
 
     "custom/launch_wofi": {

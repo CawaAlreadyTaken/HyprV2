@@ -200,7 +200,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Copying config files..."
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi fusuma
+    for DIR in hypr kitty mako swaylock waybar wlogout wofi
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
@@ -258,16 +258,14 @@ if [[ $STAR == "Y" || $STAR == "y" ]]; then
     cp extras/starship.toml ~/.config/
 fi
 
-### Install less, firefox and fusuma for gestures ###
-read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install less, firefox and fusuma for gestures? (y,n) ' LFF
+### Install less, firefox ###
+read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install less, firefox and libinput? (y,n) ' LFF
 if [[ $LFF == "Y" || $LFF == "y" ]]; then
     sudo usermod -aG input $USER
     newgrp
     yay -Suy --noconfirm &>> $INSTLOG
-    echo -e "$CNT - Installinf less, firefox, libinput, ruby, xdotool..."
-    sudo pacman -S --noconfirm less firefox libinput ruby xdotool &>> $INSTLOG
-    echo -e "$CNT - Installing fusuma..."
-    gem install fusuma
+    echo -e "$CNT - Installing less, firefox and libinput..."
+    sudo pacman -S --noconfirm less firefox libinput &>> $INSTLOG
 fi
 
 ### Install software for Asus ROG laptops ###
